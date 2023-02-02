@@ -1,0 +1,15 @@
+{
+  "name": "btchdwallet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bip44.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "hdaddressgenerator": "^1.1.11"
+  }
+}
