@@ -1,10 +1,13 @@
 const HdAddGen = require('hdaddressgenerator')
 var bodyParser = require('body-parser')
+const cors = require('cors');
 
 const express = require('express')
 const app = express()
 const port = 3000
 
+app.options('*', cors());
+app.use(cors());
 
 // create application/json parser
 var jsonParser = bodyParser.json()
@@ -30,7 +33,7 @@ app.get('/', (req, res) => {
    let addressCount = req.body.count ; 
    // The easiest way to initiate a class is by using an initiation function. 
    //HdAddGen.bip44() 
-   let bip44 = HdAddGen.withExtPub(extPub,"BTC",bip=44,account=0,change=0)
+   let bip44 = HdAddGen.withExtPub(extPub,"BTC",bip=44,account=1,change=2)
    const addresses = await  bip44.generate(addressCount)
    console.log('Generated addtresses: ',addresses);
 
